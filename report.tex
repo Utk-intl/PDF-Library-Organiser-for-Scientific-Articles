@@ -1,0 +1,182 @@
+\input{preamble.tex}
+
+% --------------------------------------------------------------------
+% --------------------------------------------------------------------
+% ---- ENTER YOUR PROJECT DETAILS BELOW
+
+% ---- title of the project
+\title{SHORT TITLE OF YOUR PROJECT}
+
+% ---- names of team members
+\author{
+    \small Name1 Surname1 \and
+    \small Name2 Surname2 \and
+    \small Name3 Surname3 \and
+    \small Name4 Surname4
+    }
+
+% ---- enter the team number below
+\rhead{Team Number XX}
+
+% --------------------------------------------------------------------
+% --------------------------------------------------------------------
+
+
+% --------------------------------------------------------------------
+% --------------------------------------------------------------------
+% ---- DO NOT CHANGE THIS BLOCK OF CODE
+\begin{document}
+\maketitle
+% --------------------------------------------------------------------
+% --------------------------------------------------------------------
+
+
+
+% --------------------------------------------------------------------
+% --------------------------------------------------------------------
+% ---- WRITE YOUR REPORT BELOW
+
+\section{Introduction}
+\lipsum[1]
+
+Here is an example of an in-text
+citation~\citep{silva-rodriguez_conformal_2025}. And this is an example where
+you want to use the author's name in the text, where \citet{fillioux_are_2025}
+have done something interesting.
+
+
+\section{Related Work}
+\lipsum[3]
+
+\section{Our contribution}
+\lipsum[4][1-15]
+
+\section{Methods}
+\subsection{Data}
+\lipsum[1][1-5]
+
+\subsection{Name of main method/theory/idea}
+\lipsum[2][1-10]
+
+You can use the \verb|align| environment to manage equations.
+\begin{align}
+    \mathbf{A} \mathbf{X} & =  \lambda \mathbf{X},  \textrm{and} \label{eq:e1} \\
+    \dot{\mathbf{X}}  & =  \frac{\mathrm{d}\mathbf{X}}{\mathrm{dt}} \label{eq:e2}  
+\end{align}
+are widely used in deriving models from data. And then you can use
+cross-referencing to refer to equations in the text, like Eq.~\ref{eq:e1}, and
+Eq.~\ref{eq:e2}, provided you have used \verb|\label| in each equation.
+
+\section{Results}
+\subsection{First results: Plots}
+
+This is a cross-reference, as seen in Fig.~\ref{fig:main_result} to the figure
+in the text. Figures have to be placed either at the top of the page or at the
+bottom of the page, and if in case they do not fit in any of these
+arrangements, they have to be placed in a page of their own.
+
+\lipsum[5]
+
+\begin{figure}[tbp]
+    \begin{center}
+        \includegraphics[width=0.75\textwidth]{./figs/result.png}
+        \caption{This is a first results figure.}
+        \label{fig:main_result}
+    \end{center}
+\end{figure}
+
+\subsection{Second results: Dashboard}
+\lipsum[4]
+
+\subsection{Third results: Use case}
+\lipsum[3]
+
+\section{Conclusion and Outlook}
+\lipsum[7][1-20]
+
+\section{Acknowledgements}
+\lipsum[8][1-5]
+
+\section{Author Contributions}
+\lipsum[1][1-9]
+
+\section{Code availability}
+The code for this project is available at the following GitHub repository:
+\url{https://github.com/bedartha/cl-todo}.
+
+% --------------------------------------------------------------------
+% --------------------------------------------------------------------
+% ---- DO NOT CHANGE THIS BLOCK OF CODE
+\section{References}
+\bibliography{refs}
+% --------------------------------------------------------------------
+% --------------------------------------------------------------------
+
+
+\section{Appendix}
+
+\subsection{Additional figures}
+If you have more figures which do not form part of the main narrative, you can
+dump them here.
+
+\subsection{Algorithms}
+
+You can dump algorithms here as well.
+
+\begin{minipage}{0.7\textwidth}
+    \begin{algorithm}[H]
+        \caption{An algorithm with caption}\label{alg:cap}
+        \begin{algorithmic}
+        \Require $n \geq 0$
+        \Ensure $y = x^n$
+            \State $y \gets 1$
+            \State $X \gets x$
+            \State $N \gets n$
+            \While{$N \neq 0$}
+                \If{$N$ is even}
+                    \State $X \gets X \times X$
+                    \State $N \gets \frac{N}{2}$  \Comment{This is a comment}
+                \ElsIf{$N$ is odd}
+                    \State $y \gets y \times X$
+                    \State $N \gets N - 1$
+                \EndIf
+            \EndWhile
+        \end{algorithmic}
+    \end{algorithm}
+\end{minipage}
+
+
+\subsection{Code snippets}
+
+Finally, you can also showcase a few important code snippets which you think
+are really important so as not to wait till the reader actually opens the
+Github repo. But to run this, you will need to compile the \verb|tex| document with
+the \verb|-shell-escape| flag. This means that instead of running:\\
+\verb|$ pdflatex report.tex|\\
+as you would usually do, you have to now run\\
+\verb|$ pdflatex --shell-escape report.tex|\\
+instead.
+
+\begin{minted}[bgcolor=white, fontsize=\small, linenos, frame=none]{python}
+# Function to check prime numbers
+def is_prime(n):
+    if n < 2:
+        return False
+    for i in range(2, int(n**0.5) + 1):
+        if n % i == 0:
+            return False
+    return True
+
+# Print primes from 1 to 20
+for i in range(1, 21):
+    if is_prime(i):
+        print(f"{i} is prime")
+\end{minted}
+
+
+% --------------------------------------------------------------------
+% --------------------------------------------------------------------
+% ---- DO NOT CHANGE THIS BLOCK OF CODE
+\end{document}
+% --------------------------------------------------------------------
+% --------------------------------------------------------------------
